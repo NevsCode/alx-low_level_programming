@@ -21,5 +21,5 @@ void print_diagsums(int *a, int size)
 		sum1 += *(a + ((size * m) - m));
 	printf("%d, %d\n", sum, sum1);
 }
-Footer
+
 
