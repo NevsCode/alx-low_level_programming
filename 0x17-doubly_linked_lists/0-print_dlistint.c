@@ -1,25 +1,20 @@
-#!/usr/bin/python3
-def safe_print_list(my_list=[], x=0):
-    num_of_elem = 0
-    len_list = 0
-    counter = 0
-    for item in my_list:
-        len_list += 1
-    try:
-        if (x == 0):
-            return num_of_elem
-        if (x >= len_list):
-            for elem in my_list:
-                print("{}".format(elem), end="")
-            print()
-            return len_list
-        else:
-            for elem in my_list:
-                num_of_elem += 1
-                print("{}".format(elem), end="")
-                if (num_of_elem == x):
-                    break
-            print()
-            return num_of_elem
-    except BaseException:
-        pass
+#include "lists.h"
+/**
+ * print_dlistint - prints length and elements
+ * @h: head of list
+ * Return: size_t value
+ */
+size_t print_dlistint(const dlistint_t *h)
+{
+	const dlistint_t *tmp;
+	int count = 0;
+
+	tmp = h;
+	while (tmp != NULL)
+	{
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+		count++;
+	}
+	return (count);
+}
